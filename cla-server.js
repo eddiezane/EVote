@@ -20,7 +20,6 @@ var https = require('https')
   , path = require('path')
   , port = process.env.PORT || 3000;
 
-
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hjs');
 app.disable('x-powered-by');
@@ -91,7 +90,7 @@ app.post('/register', function(req, res) {
 });
 
 var db = {};
-var allowed = ['111', '222', '333', '444', '555'];
+var allowed = ['111', '222', '333', '444', '555', '666', '777', '888', '999'];
 
 function sign(data, callback) {
   var signer = crypto.createSign("RSA-SHA256")
