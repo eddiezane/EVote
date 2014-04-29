@@ -1,6 +1,6 @@
 var crypt = require('crypto');
 
-crypt.randomBytes(100, function(ex, buf) {
+crypt.randomBytes(25, function(ex, buf) {
   var token = buf.toString('hex');
   console.log(token);
 });
