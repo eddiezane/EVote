@@ -16,7 +16,6 @@ var https = require('https')
       clapriv: fs.readFileSync('./keys/clarsa'),
       ctfpub: fs.readFileSync('./keys/ctfrsa.pub')
     }
-  , signer = crypto.createSign("RSA-SHA256")
   , server = https.createServer(sslkeys, app)
   , path = require('path')
   , port = process.env.PORT || 3000;
@@ -95,6 +94,7 @@ var db = {};
 var allowed = ['111', '222', '333', '444', '555'];
 
 function sign(data, callback) {
+  var signer = crypto.createSign("RSA-SHA256")
   signer.update(data);
   callback(signer.sign(keys.clapriv, "hex"));
 }

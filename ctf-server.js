@@ -7,7 +7,6 @@ var https = require('https')
   , session = require('express-session')
   , csrf = require('csurf')
   , crypto = require('crypto')
-  , verifier = crypto.createVerify("RSA-SHA256")
   , basicAuth = require('basic-auth-connect')
   // Need to use same key or browser bug
   , sslkeys = {
@@ -98,6 +97,7 @@ app.post('/newvoter', function(req, res) {
 });
 
 function verify(data, callback) {
+  var verifier = crypto.createVerify("RSA-SHA256")
   verifier.update(data.data);
   callback(verifier.verify(keys.clapub, data.sig, "hex"));
 }
