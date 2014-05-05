@@ -9,22 +9,32 @@
   </head>
   <body>
     
-     <div class="row">
-       <h1>{{total1}}</h1>
-       <ul>
-         {{#voters1}}
-           <li>{{.}}</li>
-         {{/voters1}}
-       </ul>
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>Taco Cat: {{total1}}</h1>
+        <ul>
+          {{#voters1}}
+          <li>{{.}}</li>
+          {{/voters1}}
+        </ul>
+      </div>
     </div>
 
-     <div class="row">
-       <h1>{{total2}}</h1>
-       <ul>
-         {{#voters2}}
-           <li>{{.}}</li>
-         {{/voters2}}
-       </ul>
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>Doge: {{total2}}</h1>
+        <ul>
+          {{#voters2}}
+          <li>{{.}}</li>
+          {{/voters2}}
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <h1>Unaccounted for: {{missing}}</h1>
+      </div>
     </div>
 
     <script src="js/vendor/jquery.js"></script>

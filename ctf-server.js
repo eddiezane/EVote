@@ -74,14 +74,23 @@ app.post('/vote', function(req, res) {
       valid[params.validation] = 1;
       votes[params.vote].push(params.id);
       voters.push(params.id);
-      res.end("Good");
+      res.end("Vote received!");
     }
   }
 });
 
 app.get('/results', function(req, res) {
+  var missing = 0;
+
+  for (var key in valid) {
+    if (valid[key] == 0) {
+      missing++;
+    }
+  }
+  
   res.render("results", { total1: votes[1].length, voters1: votes[1],
-                          total2: votes[2].length, voters2: votes[2]});
+                          total2: votes[2].length, voters2: votes[2],
+                          missing: missing });
 });
 
 app.post('/newvoter', function(req, res) {
@@ -102,9 +111,7 @@ function verify(data, callback) {
   callback(verifier.verify(keys.clapub, data.sig, "hex"));
 }
 
-var valid = {
-  123: 0
-};
+var valid = {};
 var votes = { 1: [], 2: [] };
 var voters = [];
 

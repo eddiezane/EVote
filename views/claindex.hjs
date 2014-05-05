@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{title}}</title>
+    <title>CLA</title>
     <link rel="stylesheet" href="css/foundation.min.css" />
     <script src="js/vendor/modernizr.js"></script>
   </head>
@@ -11,21 +11,23 @@
     
     <div class="row">
       <div class="large-12 columns">
-        <h1>Welcome to {{title}}</h1>
+        <h1>Welcome to the CLA</h1>
       </div>
     </div>
 
     <div class="row">
-      <form action="/register" method="post">
-        <label for="name">First Name:</label>
-        <input type="text" name="first_name">
-        <label for="name">Last Name:</label>
-        <input type="text" name="last_name">
-        <label for="ssn">SSN:</label>
-        <input type="password" name="ssn">
-        <button class="tiny button">Submit</button>
-        <input type="hidden" name="_csrf" value="{{csrftoken}}">
-      </form>
+      <div class="large-12 columns">
+        <form action="/register" method="post">
+          <label for="name">First Name:</label>
+          <input type="text" name="first_name">
+          <label for="name">Last Name:</label>
+          <input type="text" name="last_name">
+          <label for="ssn">SSN:</label>
+          <input type="password" name="ssn">
+          <button class="tiny button">Submit</button>
+          <input type="hidden" name="_csrf" value="{{csrftoken}}">
+        </form>
+      </div>
     </div>
 
     <script src="js/vendor/jquery.js"></script>

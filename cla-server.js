@@ -75,7 +75,7 @@ app.post('/register', function(req, res) {
                 }
               }, function(err, httpRes, body) {
                     if (httpRes.statusCode == 200) {
-                      res.end("Registered Successfully: " + validation);
+                      res.end("Registered Successfully!\nHere is your validation number: " + validation + "\nDon't share or lose it!\nVisit https://localhost:3000 to vote");
                     } else {
                       res.status(500).end("Something went wrong with post to ctf");
                     }
