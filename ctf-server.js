@@ -60,9 +60,9 @@ app.post('/vote', function(req, res) {
   } else {
 
     if (valid[params.validation] == null) {
-      res.status(401).end("Bad validation number");
+      res.status(401).end("Bad validation token");
     } else if (valid[params.validation] == 1) {
-      res.status(401).end("This validation number has already voted");
+      res.status(401).end("This validation token has already voted");
     } else if (voters.indexOf(params.id) > -1) {
       res.status(401).end("This random identifier has already been used");
     } else if ((parseInt(params.vote, 10) != 1) && (parseInt(params.vote, 10) != 2)) {
