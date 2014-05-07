@@ -66,7 +66,6 @@ app.post('/vote', function(req, res) {
     } else if (voters.indexOf(params.id) > -1) {
       res.status(401).end("This random identifier has already been used");
     } else if ((parseInt(params.vote, 10) != 1) && (parseInt(params.vote, 10) != 2)) {
-      // TODO: Make this better
       res.status(401).end("Invalid vote choice");
     }
     
